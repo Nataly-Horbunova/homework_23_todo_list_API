@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <!------------- Font Awesome ---------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-------------- Custom styles ------------->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <h1 class="main-title">To Do List <i class="fa-solid fa-highlighter"></i></h1>
+            <button class="button logout-btn">Log out</button>
+        </div>
+    </header>
+
+    <section class="auth hidden">
+        <div class="container auth__container">
+            <h2 class="secondary-title">Log in</h2>
+            <form name="loginForm" class="login-form">
+                <input type="email" placeholder="Enter your e-mail" class="input login-form__email" name="email">
+                <input type="password" placeholder="Enter your pasword" class="input login-form__password"
+                    name="password">
+                <button class="button login-form__btn"><span>Log in</span>
+                    <div class="preloader"></div>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="todo-form hidden">
+        <div class="container todo-form__container">
+            <form name="addForm" class="add-form">
+                <input type="text" name="text" placeholder="Enter task text" class="input add-form__text">
+                <select name="priority" class="select add-form__priority">
+                    <option value="Choose priority" class="priority__item" disabled selected>Choose priority</option>
+                    <option value="1" class="priority__item">1</option>
+                    <option value="2" class="priority__item">2</option>
+                    <option value="3" class="priority__item">3</option>
+                </select>
+                <button class="button add-form__btn"><span>Add task</span>
+                    <div class="preloader"></div>
+                </button>
+            </form>
+
+            <div class="to-dos hidden">
+                <ul class="list to-dos__list"></ul>
+                <button class="to-dos__hide-btn button">Hide completed</button>
+            </div>
+
+            <button class="button statistics-btn hidden">Get statistics</button>
+            <ul class="statistics-list">
+                <li class="statistics-list__active"></li>
+                <li class="statistics-list__completed"></li>
+                <li class="statistics-list__total"></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
